@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	 xmlns:context="http://www.springframework.org/schema/context"
+	 xmlns:p = "http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+      https://www.springframework.org/schema/beans/spring-beans.xsd
+      http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
+       
+       <bean class="com.Springcore.Student" name="student">
+            <property name="studentId">
+               <value>77</value>
+            </property>
+             <property name="studentName">
+                <value>Abhinav Pandey
+                </value>
+            </property>
+            
+            <property name="studentAddress">
+                <value>Mumbai</value>
+            </property>
+       </bean>
+       
+       
+       <bean class="com.Springcore.Student" name="student1">
+            <property name="studentId" value ="11" />
+    
+             <property name="studentName" value="Adarsh pandey" />
+            
+            <property name="studentAddress" value = "Delhi"/>
+       </bean>
+       
+       <!-- using p schema -->
+        <bean class="com.Springcore.Student" name="student2" p:studentId ="99" p:studentName = "Stayam Pandey" p:studentAddress = "Prayagraj" />
+       
+       <bean class="com.Springcore.Collections.Emp" name="emp1">
+       
+          <property name="name" value="Abhinav" />
+          
+          <property name="phones">
+             <list>
+                  <value>98726378982</value>
+                  <value>394793278945322</value>
+                  <value>98243984389</value>
+                  <null/>
+             </list>
+          </property>
+          <property name="addresses">
+             <set>
+                <value>Delhi</value>
+                <value>Mumbai</value>
+                <value>Kolkata</value>
+             </set>
+          </property>
+          
+          <property name ="courses">
+             <map>
+                <entry key="java" value="1.5months"></entry>
+                <entry key ="c++" value="2months" />
+                <entry key="c" value="1month" />
+             </map>
+          </property>
+          
+          <property name="props">
+              <props>
+                  <prop key="name">Abhinav</prop>
+                  <prop key="Course">LearnCodeWithSTP</prop>
+              </props>
+          </property>
+       </bean>
+
+</beans>
