@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	 xmlns:context="http://www.springframework.org/schema/context"
+	 xmlns:p = "http://www.springframework.org/schema/p"
+	 xmlns:util = "http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+      https://www.springframework.org/schema/beans/spring-beans.xsd
+      http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/util
+       http://www.springframework.org/schema/util/spring-util.xsd">
+       
+       <!-- to use annotations in your spring using below tags -->
+       <context:annotation-config></context:annotation-config>
+       
+       <util:list list-class="java.util.LinkedList" id="frnd">
+              <value>Abhinav0</value>
+              <value>Aman</value>
+              <value>Manish</value>
+       </util:list>
+       
+       <util:map map-class="java.util.LinkedHashMap" id="fees">
+              <entry key="Spring" value="8000"/>
+              <entry key="c++" value="6000"/>
+              <entry key="hIbernate" value="9000" />
+       </util:map>
+       
+       
+       <util:properties id="dbconfig">
+              <prop key="DbName">Mysql</prop>
+              <prop key="driver">com.mysql.driver</prop>      
+       </util:properties>
+       
+       
+       <bean class="com.spring.standalone.collections.Person" name="person">
+              <property name="friends">
+                     <ref bean="frnd" />
+              </property>  
+             <property name="courseInfo" ref="fees" /> 
+             <property name="properties" ref="dbconfig" />   
+       </bean>
+</beans>
